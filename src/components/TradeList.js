@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TradeListItem from './TradeListItem';
 import selectTrades from '../selectors/trades';
+import { Link } from 'react-router-dom'
+
 
 export const TradeList = (props) => (
   <div className="content-container">
@@ -21,6 +23,7 @@ export const TradeList = (props) => (
         )
       }
     </div>
+    <Link to="/create"><i className="material-icons md-48">add_circle_outline</i></Link>
   </div>
 );
 

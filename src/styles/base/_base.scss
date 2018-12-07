@@ -24,3 +24,9 @@ button:disabled {
 .is-active {
   font-weight: bold;
 }
+
+.material-icons.md-48 {
+  font-size: 48px;
+  float: right;
+  color: $red;
+}
