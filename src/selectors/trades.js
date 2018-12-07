@@ -4,7 +4,7 @@ import moment from 'moment';
 export default (trades, { text, sortBy }) => {
   return trades.filter((trade) => {
     const createdAtMoment = moment(trade.createdAt)
-    const textMatch = trade.description.toLowerCase().includes(text.toLowerCase());
+    const textMatch = trade.team.toLowerCase().includes(text.toLowerCase());
 
     return startDateMatch && endDateMatch && textMatch;
   }).sort((a, b) => {

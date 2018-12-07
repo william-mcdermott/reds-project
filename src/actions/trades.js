@@ -10,15 +10,14 @@ export const addTrade = (trade) => ({
 
 export const startAddTrade = (tradeData = {}) => {
   return (dispatch, getState) => {
-    const uid = getState().auth.uid
     const {
-      description = '',
-      note = '',
-      amount = 0,
+      players = '',
+      comment = '',
+      team = '',
       createdAt = 0
     } = tradeData;
-    const trade = { description, note, amount, createdAt }
-    return database.ref(`trades`).push(trade).then((ref) => {
+    const trade = { players, comment, team, createdAt }
+    return database.ref('trades').push(trade).then((ref) => {
       dispatch(addTrade({
         id: ref.key,
         ...trade
