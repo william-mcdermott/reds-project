@@ -33,8 +33,9 @@ export const setTrades = (trades) => ({
 });
 
 export const startSetTrades = () => {
+  console.log('fired');
   return (dispatch, getState) => {
-    return database.ref(`trades`)
+    return database.ref('trades')
       .once('value')
       .then((snapshot) => {
         const trades = [];

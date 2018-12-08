@@ -26,5 +26,9 @@ const renderApp = () => {
   }
 }
 
-
-renderApp()
+store.dispatch(startSetTrades()).then(() => {
+  renderApp();
+  if (history.location.pathname === '/') {
+    history.push('/dashboard');
+  }
+});
