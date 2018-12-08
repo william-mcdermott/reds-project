@@ -14,7 +14,7 @@ export class TradeListFilters extends React.Component {
             <input
               type="text"
               className="text-input"
-              placeholder="Search trades"
+              placeholder="Filter by team"
               value={this.props.filters.text}
               onChange={this.onTextChange}
             />

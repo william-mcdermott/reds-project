@@ -11,12 +11,13 @@ export const addTrade = (trade) => ({
 export const startAddTrade = (tradeData = {}) => {
   return (dispatch, getState) => {
     const {
-      players = '',
+      redsPlayers = '',
+      otherPlayers = '',
       comment = '',
       team = '',
       createdAt = 0
     } = tradeData;
-    const trade = { players, comment, team, createdAt }
+    const trade = { redsPlayers, otherPlayers, comment, team, createdAt }
     return database.ref('trades').push(trade).then((ref) => {
       dispatch(addTrade({
         id: ref.key,
@@ -33,7 +34,6 @@ export const setTrades = (trades) => ({
 });
 
 export const startSetTrades = () => {
-  console.log('fired');
   return (dispatch, getState) => {
     return database.ref('trades')
       .once('value')
