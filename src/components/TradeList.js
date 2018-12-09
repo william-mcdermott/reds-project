@@ -10,7 +10,7 @@ export const TradeList = (props) => (
     <div className="list-header">
       <div className="show-for-mobile">Trades</div>
       <div className="show-for-desktop">Trade</div>
-      <div className="show-for-desktop">Amount</div>
+      <div className="show-for-desktop">Discussion</div>
     </div>
     <div className="list-body">
       {

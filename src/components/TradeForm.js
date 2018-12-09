@@ -7,8 +7,8 @@ export default class TradeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      redsPlayers: '',
-      otherPlayers: '',
+      redsPlayers: props.trade ? props.trade.redsPlayers : '',
+      otherPlayers: props.trade ? props.trade.otherPlayers : '',
       comment: props.trade ? props.trade.comment : '',
       team: props.trade ? props.trade.team : '',
       createdAt: props.trade ? moment(props.trade.createdAt) : moment(),
@@ -76,6 +76,7 @@ export default class TradeForm extends React.Component {
         <select
           className="select"
           onChange={this.onTeamChange}
+          value={this.state.team}
         >
           <option>Select Team</option>
           <option value="Angels">Angels</option>
@@ -111,7 +112,7 @@ export default class TradeForm extends React.Component {
         <textarea
           placeholder="Add comments for your trade"
           className="textarea"
-          value={this.state.note}
+          value={this.state.comment}
           onChange={this.onCommentChange}
         >
         </textarea>

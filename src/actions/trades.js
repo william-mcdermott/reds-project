@@ -27,6 +27,35 @@ export const startAddTrade = (tradeData = {}) => {
   };
 };
 
+// REMOVE_TRADE
+export const removeTrade = ({id} = {}) => ({
+  type: 'REMOVE_TRADE',
+  id
+});
+
+export const startRemoveTrade = ({id} = {}) => {
+  return (dispatch, getState) => {
+    return database.ref(`trades/${id}`).remove().then(() => {
+      dispatch(removeTrade({id}))
+    });
+  };
+};
+
+// EDIT_TRADE
+export const editTrade = (id, updates) => ({
+  type: 'EDIT_TRADE',
+  id,
+  updates
+});
+
+export const startEditTrade = (id, updates) => {
+  return (dispatch, getState) => {
+    return database.ref(`trades/${id}`).update(updates).then(() => {
+      dispatch(editTrade(id, updates))
+    });
+  };
+};
+
 // SET_TRADES
 export const setTrades = (trades) => ({
   type: 'SET_TRADES',
