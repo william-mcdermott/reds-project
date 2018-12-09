@@ -5,11 +5,12 @@ import moment from 'moment';
 const TradeListItem = ({ id, redsPlayers, otherPlayers, comment, team, createdAt }) => (
   <Link className="list-item" to={`/edit/${id}`}>
     <div>
-      <h3 className="list-item__title">{team}</h3>
-      <span className="list-item__sub-title">{moment(createdAt).format('MMM Do YYYY, h:mm a')}</span>
+      <h3>{team}</h3>
+      <p className="list-item__sub-title">{moment(createdAt).format('MMM Do YYYY, h:mm a')}</p>
+      <p className="list-item__data">{`You discussed trading ${redsPlayers} for ${otherPlayers}`}</p>
+      <h4>Comments:</h4>
+      <p className="list-item__data">{comment}</p>
     </div>
-    <h3 className="list-item__data">{`You discussed trading ${redsPlayers} for ${otherPlayers}`}</h3>
-    <p>{comment}</p>
   </Link>
 )
 
