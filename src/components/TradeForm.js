@@ -78,7 +78,7 @@ export default class TradeForm extends React.Component {
           onChange={this.onTeamChange}
           value={this.state.team}
         >
-          <option>Select Team</option>
+          <option value="">Select Team</option>
           <option value="Angels">Angels</option>
           <option value="Astros">Astros</option>
           <option value="Athletics">Athletics</option>
